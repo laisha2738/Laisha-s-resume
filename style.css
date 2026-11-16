@@ -1288,44 +1288,55 @@ body {
         margin: 12mm;
     }
 
+    html,
     body {
-        background: white;
-    }
-
-    body * {
-        visibility: hidden;
-    }
-
-    .resume-paper,
-    .resume-paper * {
-        visibility: visible;
-    }
-
-    .resume-paper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: none;
         margin: 0;
         padding: 0;
-        box-shadow: none;
-    }
-
-    .resume-section {
-        padding: 0;
+        width: auto;
         background: white;
     }
 
-    .resume-heading {
-        display: none;
+    /* Remove the other website sections completely */
+    body > *:not(#resume) {
+        display: none !important;
+    }
+
+    /* Keep only the printable resume */
+    #resume {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+
+    #resume > *:not(.resume-paper) {
+        display: none !important;
+    }
+
+    /* Format the resume for A4 printing */
+    .resume-paper {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: white !important;
     }
 
     .resume-block {
         break-inside: avoid;
+        page-break-inside: avoid;
     }
-}
 
+    .resume-block h2,
+    .resume-block h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+}
 /* MOBILE */
 
 @media (max-width: 700px) {
