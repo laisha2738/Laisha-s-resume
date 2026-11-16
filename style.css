@@ -1351,3 +1351,74 @@ body {
     outline: 1px solid var(--dark);
     display: block;
 }
+
+/* MOBILE COVER PAGE FIX */
+
+@media (max-width: 700px) {
+
+    .cover-page {
+        padding: 25px 5%;
+    }
+
+    /* Navigation */
+    .top-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .navigation {
+        order: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 12px 18px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+
+    /* Introduction card */
+    .identity-card {
+        padding: 24px 20px;
+    }
+
+    .card-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        padding: 35px 0;
+    }
+
+    .intro-text {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .intro-text h1 {
+        font-size: clamp(48px, 12vw, 68px);
+    }
+
+    /* Profile photograph */
+    .photo-area {
+        width: min(100%, 280px);
+        max-width: 100%;
+        flex-shrink: 1;
+        align-self: center;
+    }
+
+    .cover-photo {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+    }
+
+    /* Bottom text */
+    .bottom-note {
+        flex-wrap: wrap;
+        font-size: 9px;
+    }
+}
